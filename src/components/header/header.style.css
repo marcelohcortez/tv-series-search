@@ -4,4 +4,17 @@
     align-items: center;
     justify-content: space-between;
     margin-bottom: 30px;
+    column-gap: 20px;
+}
+
+@media screen and (max-width: 767px){
+    .header.search-done{
+        flex-flow: column;
+    }
+    .header.search-done .logo{
+        max-width: 160px;
+    }
+    .header.search-done .logo img{
+        width: 100%;
+    }
 }

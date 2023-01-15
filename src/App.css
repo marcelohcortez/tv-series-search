@@ -4,3 +4,8 @@
   padding: 2rem;
   text-align: center;
 }
+@media screen and (max-width: 767px){
+  #root {
+    width: 100%;
+  }
+}

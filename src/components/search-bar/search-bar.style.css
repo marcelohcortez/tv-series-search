@@ -32,7 +32,20 @@
     margin-top: 78px;
     background: #00A496;
     border-radius: 2px;
+    font-weight: 700;
 }
 .header.search-done .searchBar-container button{
     margin-top: 3px;
+}
+
+@media screen and (max-width: 767px){
+    .header.search-done .searchBar-container{
+        margin-top: 24px;
+    }
+    .header.search-done .searchBar-container input{
+        padding: 14px 105px 14px 20px;
+    }
+    .header.search-done .searchBar-container button{
+        padding: 11px 20px;
+    }
 }
