@@ -10,7 +10,9 @@ const Home = () => {
     return (
         <div className="Home">
             <Header setSeries={ setSeries } searchDone={searchDone} setSearchDone={setSearchDone}/>
-            <CardList series={series}/>
+            {series &&
+                <CardList series={series}/>
+            }
         </div>
     )
 }
