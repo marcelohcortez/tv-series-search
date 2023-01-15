@@ -8,6 +8,9 @@
     padding: 16px;
     text-align: left;
 }
+.return span{
+    cursor: pointer;
+}
 .series-single{
     display: flex;
     column-gap: 60px;
