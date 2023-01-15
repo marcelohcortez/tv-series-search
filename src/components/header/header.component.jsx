@@ -2,6 +2,8 @@ import SearchBar from "../search-bar/search-bar.component"
 
 import logo from '../../assets/logo-tv-maze.png'
 
+import './header.style.css'
+
 const Header = ({setSeries, searchDone, setSearchDone}) => {
 
     return (
