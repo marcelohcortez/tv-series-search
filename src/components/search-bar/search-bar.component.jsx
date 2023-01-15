@@ -1,5 +1,7 @@
 import axios from "axios"
 
+import './search-bar.style.css'
+
 const SearchBar = ({setSeries, setSearchDone}) => {
     const onClickHandler = async (e) => {
         e.preventDefault
