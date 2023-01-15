@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { useParams } from "react-router-dom"
+import { useParams, useNavigate } from "react-router-dom"
 
 import axios from "axios"
 
@@ -10,6 +10,8 @@ const Details = () => {
     const [seriesData, setSeriesData] = useState([])
     const [seriesCast, setSeriesCast] = useState()
     const [loading, setLoading] = useState(true)
+
+    const navigate = useNavigate();
 
     useEffect(() => {
         const response = async () => {
@@ -27,10 +29,14 @@ const Details = () => {
         }  
         response()
     }, [])
+
+    const onClickHandler = () => {
+        navigate(-1);
+    }
     
     return (
         <div className="details-page">
-            <div className="return">Back to search results</div>
+            <div className="return"><span onClick={ onClickHandler }>Back to search results</span></div>
             { !loading &&
                 <div className="series-single">
                     <div className="series-cover">
@@ -41,7 +47,7 @@ const Details = () => {
                     <div className="series-details">
                         <div className="series-infos">
                             <h2 className="series-title">{seriesData.name}</h2>
-                            <span className="series-rating">{seriesData.rating.average}</span>
+                            <span className="series-rating">Rating: {seriesData.rating.average}</span>
                             <p className="series-genres"><b>Genres:</b>
                                 {seriesData.genres.map((genre) => {
                                     return <span key={genre}> {genre} /</span>
