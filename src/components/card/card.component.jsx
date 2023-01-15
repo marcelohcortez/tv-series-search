@@ -6,7 +6,7 @@ const Card = ({ seriesItem }) => {
     const navigate = useNavigate();
     
     return (
-        <div className="card-container" onClick={() => navigate(`/details/${seriesItem.show.id}`)}>
+        <div className="card-container" onClick={() => navigate(`/details/${seriesItem.show.externals.thetvdb}`)}>
             <img className="card-image" src={seriesItem.show.image.medium}/>
             <p className="card-name">{seriesItem.show.name}</p>
             <span className="card-rating">Rating: {seriesItem.show.rating.average}</span>
