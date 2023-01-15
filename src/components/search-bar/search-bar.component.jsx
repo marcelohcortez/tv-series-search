@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from "axios"
 
 const SearchBar = ({setSeries, setSearchDone}) => {
     const onClickHandler = async (e) => {

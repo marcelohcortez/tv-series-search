@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState } from "react"
 
 import Header from "../../components/header/header.component";
 import CardList from "../../components/card-list/card-list.component"
