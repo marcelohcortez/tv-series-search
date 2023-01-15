@@ -9,13 +9,19 @@ In the main folder, run
 ```bash
   yarn dev
 ```    
-## To Do
+## To Do (from the original tasks)
 - Correct the behaviour of the header component to make it as a route that contains the other routes
-- Fix mobile view
+- Fix CSS
 - Add searched query to URL
+- With the search query in the URL, the 'back' button will return to a previous made search
 - Add arrow icon to 'back' button on details page
 - Add stars in place of the 'rating' text
 - Fix genre formatting inside details page
+
+## To Do (improvements)
+- Add a default image to be displayed when the series don't have one
+- Add a default image to be displayed when the cast don't have one
+- Implement the possibility for the user to click on a cast member and see which series they participated
 
 
 
