@@ -8,7 +8,15 @@ Project created for Nexer's interview process.
 In the main folder, run
 ```bash
   yarn dev
-```    
+```
+If you ran into any issue, run
+```bash
+  yarn
+```
+And then
+```bash
+  yarn dev
+```
 ## To Do (from the original tasks)
 - Correct the behaviour of the header component to make it as a route that contains the other routes
 - Fix CSS
