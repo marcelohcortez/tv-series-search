@@ -9,10 +9,6 @@ In the main folder, run
 ```bash
   yarn dev
 ```
-If you ran into any issue, run
-```bash
-  yarn
-```
 And then
 ```bash
   yarn dev
