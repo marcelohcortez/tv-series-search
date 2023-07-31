@@ -1,3 +1,8 @@
+#show{
+    width:100%;
+    min-height:100vh;
+    min-height:100dvh;
+}
 .return{
     background: rgba(0,0,0,0.2);
     mix-blend-mode: normal;

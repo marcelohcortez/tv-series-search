@@ -10,6 +10,7 @@ import './results.style.css';
 
 const Results = () => {
     const [ series, setSeries ] = useState([])
+    const [ isLoading, setIsLoading ] = useState(true)
     const { name } = useParams()
 
     useEffect(() => {
@@ -17,25 +18,29 @@ const Results = () => {
             try {
                 const response = await axios.get(`https://api.tvmaze.com/search/shows?q=${ name }`)
                 setSeries( response.data )
-                console.log(series)
             } catch ( error ) {
                 console.error( error );
             }
         }
         response()
+        setIsLoading(false)
     }, [])
         
     return (
         <>
-            <Header/>
-            <div className="results">
-                {series.length > 0 
-                ? 
-                <CardList series={ series }/>
-                :
-                <h1>Nothing found!</h1>
-                }
+        {!isLoading && 
+            <div id="results">
+                <Header/>
+                <div className="results">
+                    {series.length > 0 
+                    ? 
+                    <CardList series={ series }/>
+                    :
+                    <h1>Nothing found. Try a new search.</h1>
+                    }
+                </div>
             </div>
+        }
         </>
     )
 }

@@ -2,10 +2,12 @@ import { useState } from "react";
 
 import Header from "../../components/header/header.component";
 
+import './home.style.css';
+
 const Home = () => {
         
     return (
-        <div className="Home">
+        <div id="home">
             <Header/>
         </div>
     )
