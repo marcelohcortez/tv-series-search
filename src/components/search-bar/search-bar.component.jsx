@@ -14,7 +14,7 @@ const SearchBar = () => {
 
     const onClickHandler = async (e) => {
         e.preventDefault
-        navigate(`/results/${searchTerm}`)
+        navigate(`/results/${ searchTerm }`)
     }
 
     useEffect(() => {
@@ -30,7 +30,7 @@ const SearchBar = () => {
                 name="searchTerm"
                 className="searchBar"
                 type="text"
-                value={searchTerm}
+                value={ searchTerm }
                 placeholder="Search for TV shows"
                 onChange={ onChangeSearchTerm }
             />

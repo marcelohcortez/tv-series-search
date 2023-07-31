@@ -9,16 +9,17 @@ import CardList from "../../components/card-list/card-list.component";
 import './results.style.css';
 
 const Results = () => {
-    const [series, setSeries] = useState([])
+    const [ series, setSeries ] = useState([])
     const { name } = useParams()
 
     useEffect(() => {
         const response = async () => {
             try {
-                const response = await axios.get(`https://api.tvmaze.com/search/shows?q=${name}`)
-                setSeries(response.data)
-            } catch (error) {
-                console.error(error);
+                const response = await axios.get(`https://api.tvmaze.com/search/shows?q=${ name }`)
+                setSeries( response.data )
+                console.log(series)
+            } catch ( error ) {
+                console.error( error );
             }
         }
         response()
@@ -28,7 +29,12 @@ const Results = () => {
         <>
             <Header/>
             <div className="results">
-                {series && <CardList series={series}/>}
+                {series.length > 0 
+                ? 
+                <CardList series={ series }/>
+                :
+                <h1>Nothing found!</h1>
+                }
             </div>
         </>
     )
