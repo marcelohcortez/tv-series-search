@@ -1,17 +1,25 @@
-import SearchBar from "../search-bar/search-bar.component"
+import { useNavigate, useLocation } from 'react-router-dom';
 
-import logo from '../../assets/logo-tv-maze.png'
+import SearchBar from "../search-bar/search-bar.component";
 
-import './header.style.css'
+import logo from '../../assets/logo-tv-maze.png';
 
-const Header = ({setSeries, searchDone, setSearchDone}) => {
+import './header.style.css';
+
+const Header = () => {
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    const onClickHandle = () => {
+        navigate(`/`)
+    }
 
     return (
-        <div className={searchDone ? 'header search-done' : 'header'}>
-            <div className="logo">
+        <div className={location.pathname === '/' ? 'header' : 'header search-done'}>
+            <div className="logo" onClick={ onClickHandle }>
                 <img src={logo} alt="logo"/>
             </div>
-            <SearchBar setSeries={setSeries} setSearchDone={setSearchDone} />
+            <SearchBar />
         </div>
     )   
 }

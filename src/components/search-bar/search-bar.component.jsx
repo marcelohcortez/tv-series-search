@@ -1,29 +1,38 @@
-import axios from "axios"
+import { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 
-import './search-bar.style.css'
+import './search-bar.style.css';
 
-const SearchBar = ({setSeries, setSearchDone}) => {
+const SearchBar = () => {
+    const [searchTerm, setSearchTerm] = useState()
+    const { name } = useParams()
+    const navigate = useNavigate()
+
+    const onChangeSearchTerm = (e) => {
+        setSearchTerm(e.target.value)
+    }
+
     const onClickHandler = async (e) => {
         e.preventDefault
-
-        const searchValue = e.target.previousElementSibling.value
-        
-        try {
-            const response = await axios.get(`https://api.tvmaze.com/search/shows?q=${searchValue}`)
-            setSeries(response.data)
-            setSearchDone(true)
-        } catch (error) {
-            console.error(error);
-        }
+        navigate(`/results/${searchTerm}`)
     }
+
+    useEffect(() => {
+        setSearchTerm(name)
+    }, [])
+    
     
     return(
      
         <div className="searchBar-container">
             <input
+                id="searchTerm"
+                name="searchTerm"
                 className="searchBar"
                 type="text"
+                value={searchTerm}
                 placeholder="Search for TV shows"
+                onChange={ onChangeSearchTerm }
             />
             <button type="submit" onClick={ onClickHandler }>Search</button>
             

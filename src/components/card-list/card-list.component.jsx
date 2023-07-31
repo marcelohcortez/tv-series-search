@@ -1,6 +1,6 @@
-import Card from '../card/card.component'
+import Card from '../card/card.component';
 
-import './card-list.style.css'
+import './card-list.style.css';
 
 const CardList = ({series}) => (
     <div className='card-list'>
