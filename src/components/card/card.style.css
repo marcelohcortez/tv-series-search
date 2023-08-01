@@ -1,29 +1,37 @@
 .card-container{
     width: 100%;
-    max-width: 217px;
+    max-width: 13.5625rem;
     text-align: left;
     cursor: pointer
 }
 .card-name{
-    margin: 12px 0 7px 0;
-    font-size: 16px;
+    margin: 0.75rem 0 0.4375rem 0;
+    font-size: 1rem;
     font-weight: bold;
 }
 .card-image{
     width: 100%;
 }
-
+@media screen and (max-width: 1024px) {
+    .card-container {
+        max-width: 11.5625rem;
+    }
+}
 @media screen and (max-width: 767px) {
     .card-container {
-        max-width: 190px;
+        max-width: 11.875rem;
     }
     .card-image {
         width: 100%;
     }
 }
-
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 490px) {
     .card-container {
         max-width: 46%;
+    }
+}
+@media screen and (max-width: 455px) {
+    .card-container {
+        max-width: 45%;
     }
 }

@@ -11,6 +11,21 @@
   justify-content: center;
   box-sizing: border-box;
 }
+@media screen and (max-width: 1166px){
+  #root {
+    width: 77%;
+  }
+}
+@media screen and (max-width: 1024px){
+  #root {
+    width: 95%;
+  }
+}
+@media screen and (max-width: 832px){
+  #root {
+    width: 100%;
+  }
+}
 @media screen and (max-width: 767px){
   #root {
     width: 100%;

@@ -1,12 +1,10 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-
 import axios from "axios";
 
 import Header from "../../components/header/header.component";
 
 import cover from '../../assets/no-img-found.png';
-
 import cast from '../../assets/no-cast-found.png';
 
 import './show.style.css';
@@ -16,7 +14,6 @@ const Details = () => {
     const [seriesData, setSeriesData] = useState([])
     const [seriesCast, setSeriesCast] = useState()
     const [loading, setLoading] = useState(true)
-
     const navigate = useNavigate();
 
     useEffect(() => {
