@@ -7,6 +7,8 @@ import Header from "../../components/header/header.component";
 
 import cover from '../../assets/no-img-found.png';
 
+import cast from '../../assets/no-cast-found.png';
+
 import './show.style.css';
 
 const Details = () => {
@@ -39,9 +41,9 @@ const Details = () => {
     }   
 
     const renderCover = () => {
-        let imageSource = seriesData.image;
+        let imageSource = '';
         
-        imageSource === null ? imageSource = cover : imageSource = seriesData.image.medium ;
+        seriesData.image === null ? imageSource = cover : imageSource = seriesData.image.medium ;
 
         return imageSource;
     }
@@ -54,17 +56,19 @@ const Details = () => {
                 { !loading &&
                     <div className="series-single">
                         <div className="series-cover">
-            
-                                <img src={ renderCover() } />
-                    
+                            <img src={ renderCover() } />
                         </div>
                         <div className="series-details">
                             <div className="series-infos">
                                 <h2 className="series-title">{seriesData.name}</h2>
                                 <span className="series-rating"><b>Rating:</b> {seriesData.rating.average === null ? 'N/A' : seriesData.rating.average}</span>
                                 <p className="series-genres"><b>Genres:</b>
-                                    {seriesData.genres.map((genre) => {
-                                        return <span key={genre}> {genre} /</span>
+                                    {seriesData.genres.map((genre, i) => {
+                                        if (i + 1 === seriesData.genres.length) {
+                                            return <span key={genre}> {genre}</span>
+                                        } else {
+                                            return <span key={genre}> {genre} /</span>
+                                        }
                                     })}
                                 </p>
                             </div>
@@ -73,12 +77,18 @@ const Details = () => {
                                 <h2>Cast</h2>
                                 <div className="series-cast-list">
                                     {seriesCast.map((seriesCastItem) => {
+                                        const renderCast = () => {
+                                            let castSource = '';
+                                            
+                                            seriesCastItem.character.image === null ? castSource = cast : castSource = seriesCastItem.character.image.medium;
+
+                                            return castSource;
+                                        }
+
                                         return (
                                             <div className="cast-item" key={seriesCastItem.character.id}>
                                                 <div className="cast-image">
-                                                    {seriesCastItem.character.image !== null &&
-                                                        <img src={seriesCastItem.character.image.medium}/>
-                                                    }
+                                                    <img src={ renderCast() }/>
                                                 </div>
                                                 <div className="cast-info">
                                                     <p className="cast-item-name">{seriesCastItem.person.name}</p>
