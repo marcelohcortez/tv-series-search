@@ -9,6 +9,7 @@
   flex-flow: column;
   align-items: center;
   justify-content: center;
+  box-sizing: border-box;
 }
 @media screen and (max-width: 767px){
   #root {
