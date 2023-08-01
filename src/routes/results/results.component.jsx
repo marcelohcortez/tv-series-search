@@ -24,12 +24,12 @@ const Results = () => {
         }
         response()
         setIsLoading(false)
-    }, [])
+    }, [name])
         
     return (
-        <>
-        {!isLoading && 
-            <div id="results">
+        <div id="results">
+            {!isLoading && 
+            <>
                 <Header/>
                 <div className="results">
                     {series.length > 0 
@@ -39,9 +39,9 @@ const Results = () => {
                     <h1>Nothing found. Try a new search.</h1>
                     }
                 </div>
-            </div>
-        }
-        </>
+            </>
+            }
+        </div>
     )
 }
 
