@@ -31,12 +31,14 @@ const Results = () => {
             {!isLoading && 
             <>
                 <Header/>
-                <div className="results">
+                <div className="results-list">
                     {series.length > 0 
                     ? 
                     <CardList series={ series }/>
                     :
-                    <h1>Nothing found. Try a new search.</h1>
+                    <div className="nothing-found">
+                        <h1>Nothing found. Try a new search.</h1>
+                    </div>
                     }
                 </div>
             </>
